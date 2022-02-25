@@ -20,13 +20,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="" class="nav-link" style="color:white;">Home</a>
+                    <a href="{{ route('vouchers.index') }}" class="nav-link" style="color:white;">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link" style="color:white;">Vouchers</a>
-                </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link" style="color:white;">My profile</a>
+                    <a href="{{ route('myVouchers.index') }}" class="nav-link" style="color:white;">My profile</a>
                 </li>
             </ul>
         </div>
@@ -45,4 +42,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
     </div>
 </div>
 </body>
+<script src="/js/api-vouchers.js"></script>
+<script src="/js/api-voucher-user.js"></script>
 </html>

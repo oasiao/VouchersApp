@@ -9,7 +9,7 @@
             <div class="card-body">
                 <h5 class="card-title">Valid until {{ $voucher->valid_date }}</h5>
                 <p class="card-text">Get your voucher!</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <button class="create btn btn-primary" voucher_code="{{ $voucher->id }}" user_id="{{ Auth::user()->id }}">Get voucher</button>
             </div>
         </div>
     @endforeach
