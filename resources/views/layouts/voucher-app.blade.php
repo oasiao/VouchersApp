@@ -41,6 +41,35 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
                 <li class="nav-item">
                     <a href="{{ route('myVouchers.index') }}" class="nav-link" style="color:white;">My profile</a>
                 </li>
+
+                @auth
+                <li>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="nav-link" style="border:none; display:flex; background: none; color:white;">Log
+                        out
+                    </button>
+                </form>
+                </li>
+                @endauth
+
+                <div class="d-flex">
+                @guest <!-- if you are not logged-in -->
+                    <form action="{{ route('register') }}" method="get">
+                        @csrf
+                        <button type="submit" style="border:none; display:flex; background: none; color: #ffffff; ">
+                            Register
+                        </button>
+                    </form>
+                    <form action="{{ route('login') }}" method="get">
+                        @csrf
+                        <button type="submit" style="border:none; display:flex; background: none; color: #ffffff;">
+                            Log in
+                        </button>
+                    </form>
+
+                    @endguest
+                </div>
             </ul>
         </div>
     </div>

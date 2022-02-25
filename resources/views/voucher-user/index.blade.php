@@ -4,7 +4,7 @@
 
     @foreach( $vouchers as $voucher )
 
-        @foreach( $myVouchers as $myVoucher)
+        @forelse( $myVouchers as $myVoucher)
             @if ( $myVoucher->id === $voucher->voucher_code )
                 <div class="container mt-5">
                     <div class="d-flex justify-content-center row">
@@ -33,7 +33,13 @@
                         </div>
                     </div>
                 </div>
+
             @endif
         @endforeach
-    @endforeach
+        @empty
+            <div class="alert alert-warning text-center" role="alert">
+                You don't have any voucher! Click <a href="{{ route('vouchers.index') }}">here</a> to get some!
+            </div>
+
+    @endforelse
 @endsection
