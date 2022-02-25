@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\api\ApiVoucherUserController;
+use App\Models\Voucher;
 use Illuminate\Http\Request;
 
 class VoucherUserController extends Controller
@@ -10,13 +11,14 @@ class VoucherUserController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
         $api = new ApiVoucherUserController;
         $vouchers = $api->index();
-        return view('voucher-user.index',compact('vouchers'));
+        $myVouchers = $this->myVouchers(Auth()->user());
+        return view('voucher-user.index',compact('vouchers','myVouchers'));
     }
 
     /**
@@ -85,5 +87,16 @@ class VoucherUserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function myVouchers($user){
+
+        $voucher_ids = $user->vouchers()->allRelatedIds()->toArray();
+
+        $myVouchers = [];
+        foreach ($voucher_ids as $id){
+            array_push($myVouchers,Voucher::find($id));
+        }
+        return $myVouchers;
     }
 }

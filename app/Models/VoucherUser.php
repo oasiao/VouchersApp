@@ -9,7 +9,5 @@ class VoucherUser extends Model
 {
     use HasFactory;
     protected $table = 'users_vouchers';
-    protected $primaryKey = null;
-    public $incrementing = false;
-    protected $fillable = ['user_id','voucher_code'];
+    protected $fillable = ['user_id','voucher_code','redeemed'];
 }
