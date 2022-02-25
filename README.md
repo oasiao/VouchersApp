@@ -9,8 +9,11 @@ acción que será reflejado en la base de datos (el campo redemeed será true o 
 http://oasiao.randion.es/VouchersApp/public/
 
 ## Funcionamiento en local
-Migrar las tablas en la base de datos (que se haya creado). Utilizo pgsql, pero es indiferente ya que utilizo Eloquent 
-para la la gestión de datos.
+Utilizo pgsql, pero es indiferente ya que utilizo Eloquent para la la gestión de datos. Por tanto, bastaría con modificar el archivo 
+.env, introducir los datos del DB_CONNECTION, migrar las tablas en la base de datos (que se haya creado) y ejecutar el seeder que ya esta creado.
+
+- php artisan migrate
+- php artisan db:seed VoucherSeeder
 
 ## Requerimientos de la aplicación
 - [x] Un usuario se registra o hace login en la aplicación. (Además, si no hace login, no le permitirá obtener 
