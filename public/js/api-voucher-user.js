@@ -51,7 +51,7 @@ const apiMyVouchers = {
                 }).then(()=>{
                     if(!repeated){
                         createVoucher(voucher).then(()=>{
-                            location.href = '/myVouchers';
+                            location.replace('myVouchers');
                         });
                     }else{
                         alert('You already have this voucher!');
@@ -80,8 +80,9 @@ const apiMyVouchers = {
                     };
                     await fetch(url, settings);
                 }
-
-                redeemed(voucher);
+                redeemed(voucher).then(()=>{
+                        location.reload();
+                    });
             });
         });
     },
