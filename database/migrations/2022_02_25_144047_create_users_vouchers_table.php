@@ -14,8 +14,10 @@ class CreateUsersVouchersTable extends Migration
     public function up()
     {
         Schema::create('users_vouchers', function (Blueprint $table) {
+            $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->string('voucher_code');
+            $table->boolean('redeemed')->default(false);
             $table->timestamps();
 
             $table->foreign('user_id')
