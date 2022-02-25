@@ -16,4 +16,9 @@ class Voucher extends Model
     protected $casts = [
         'id' => 'string',
     ];
+
+    //MANY TO MANY
+    public function users() {
+        return $this->belongsToMany(User::class);
+    }
 }
