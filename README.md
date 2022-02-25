@@ -6,7 +6,7 @@ En su perfil, podrá revisar que códigos promocionales tiene y pulsar sobre un 
 acción que será reflejado en la base de datos (el campo redemeed será true o false).
 
 ## Desplegado en el servidor
-http://oasiao.randion.es/VouchersApp/public/
+http://oasiao.randion.es/VouchersApp/public/vouchers
 
 ## Funcionamiento en local
 Utilizo pgsql, pero es indiferente ya que utilizo Eloquent para la la gestión de datos. Por tanto, bastaría con modificar el archivo 
@@ -27,5 +27,5 @@ realizadas
 
 
 ### Tiempo invertido
-Los requerimientos básicos de la aplicación han sido realizadas en 3h. La 4ta hora he mejorado la aplicación con controles
+Los requerimientos básicos de la aplicación han sido realizadas en 3h. Durante la 4ta hora, he mejorado la aplicación con controles
 y estilos con bootstrap. 
