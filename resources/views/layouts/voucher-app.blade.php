@@ -35,6 +35,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
+                <li class="nav-link" style="color:white; margin-right: 5vh"> Hello, {{ Auth()->user()->name }} </li>
                 <li class="nav-item">
                     <a href="{{ route('vouchers.index') }}" class="nav-link" style="color:white;">Home</a>
                 </li>
@@ -53,6 +54,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
                 </li>
                 @endauth
 
+
+
                 <div class="d-flex">
                 @guest <!-- if you are not logged-in -->
                     <form action="{{ route('register') }}" method="get">
@@ -70,6 +73,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
 
                     @endguest
                 </div>
+
+
             </ul>
         </div>
     </div>

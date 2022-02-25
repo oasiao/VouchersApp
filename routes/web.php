@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\VoucherController;
 use App\Http\Controllers\VoucherUserController;
+use App\Http\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,5 +26,5 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::resource('/vouchers',VoucherController::class);
-Route::resource('/myVouchers',VoucherUserController::class);
+Route::resource('/vouchers',VoucherController::class)->middleware(Authenticate::class,'redirectTo');
+Route::resource('/myVouchers',VoucherUserController::class)->middleware(Authenticate::class,'redirectTo');
