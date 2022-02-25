@@ -17,6 +17,7 @@ class VoucherSeeder extends Seeder
     public function run()
     {
         $helper = new VoucherHelper;
+
         $vouchers = [
             [
                 'id' => $helper->str_random(15),
