@@ -15,6 +15,8 @@
                         <p class="card-text">Get your voucher!</p>
                         @if( $voucher->redeemed )
                             <div class="btn btn-danger">Voucher redeemed</div>
+                        @elseif ( date($myVoucher->valid_date) < date(\Carbon\Carbon::now()) )
+                            <div class="btn btn-danger">Voucher expired</div>
                         @else
                             <button class="use btn btn-primary" voucher_id="{{ $voucher->id }}" voucher_code="{{ $voucher->voucher_code }}">Use voucher</button>
                         @endif
