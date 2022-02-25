@@ -2,6 +2,7 @@
 @section('title','VoucherApp')
 @section('content')
     @foreach( $vouchers as $voucher )
+        @if( date($voucher->valid_date) > date(\Carbon\Carbon::now()) )
         <div class="card">
             <div class="card-header">
                 {{ $voucher->value }}
@@ -12,5 +13,6 @@
                 <button class="create btn btn-primary" voucher_code="{{ $voucher->id }}" user_id="{{ Auth::user()->id }}">Get voucher</button>
             </div>
         </div>
+        @endif
     @endforeach
 @endsection
