@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\VoucherController;
+use App\Http\Controllers\VoucherUserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,3 +26,4 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::resource('/vouchers',VoucherController::class);
+Route::resource('/myVouchers',VoucherUserController::class);

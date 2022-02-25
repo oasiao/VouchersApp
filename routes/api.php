@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\api\ApiVoucherController;
+use App\Http\Controllers\api\ApiVoucherUserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::ApiResource('api-vouchers',ApiVoucherController::class);
+Route::ApiResource('api-myVouchers',ApiVoucherUserController::class);
