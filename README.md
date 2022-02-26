@@ -6,7 +6,8 @@ En su perfil, podrá revisar que códigos promocionales tiene y pulsar sobre un 
 acción que será reflejado en la base de datos (el campo redemeed será true o false).
 
 ## Desplegado en el servidor
-http://oasiao.randion.es/VouchersApp/public/
+Se encuentra desplegado en el servidor randion.es y se encuentra en la carpeta oasiao/VouchersApp/public. He tenido que crear un dominio y un virtual host en el servidor, para que el dominio apuntase directamente a la carpeta public; de esta manera, las rutas no fallan.
+http://vouchersapp.ddns.net/
 
 ## Funcionamiento en local
 Utilizo pgsql, pero es indiferente ya que utilizo Eloquent para la la gestión de datos. Por tanto, bastaría con modificar el archivo 
